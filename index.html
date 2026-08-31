@@ -1,45 +1,50 @@
-<!doctype html>
+doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Calculator</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="calculator">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
       <input type="text" id="display" disabled />
+    <div class="history">
+      <div class="history-header">
+        <div class="history-title">HISTORY</div>
+      </div>
+      <div id="history-list"></div>
+    </div>
       <div class="buttons">
-        <button onclick="appendValue('*')">
-          <img src="muliply.png" alt="Multiply" />
+        <button class="clear-btn" onclick="clearDisplay()" aria-label="Clear">
+          <img src="./Calculator%20values/clear.png" alt="Clear" />
         </button>
-        <button onclick="appendValue('/')">
-          <img src="divide real.png" alt="Divide" />
+        <button class="clear-history-btn" onclick="clearHistory()" aria-label="Clear History">Clear History</button>
+        <button class="delete-btn" onclick="deleteLast()" aria-label="Delete">🔙</button>
+        <button onclick="appendValue('/')" aria-label="Divide"><img src="./Calculator%20values/divide%20real.png" alt="Divide" /></button>
+        <button onclick="appendValue('7')"aria-label="Seven"><img src="./Calculator%20values/7.png" alt="7" /></button>
+        <button onclick="appendValue('8')" aria-label="Eight"><img src="./Calculator%20values/8.png" alt="8" /></button>
+        <button onclick="appendValue('9')" aria-label="Nine"><img src="./Calculator%20values/9.png" alt="9" /></button>
+        <button onclick="appendValue('*')" aria-label="Multiply"><img src="./Calculator%20values/muliply.png" /></button>
+        <button onclick="appendValue('4')" aria-label="Four"><img src="./Calculator%20values/4.png" alt="4" /></button>
+        <button onclick="appendValue('5')" aria-label="Five"><img src="./Calculator%20values/5.png" alt="5" /></button>
+        <button onclick="appendValue('6')" aria-label="Six"><img src="./Calculator%20values/6.png" alt="6" /></button>
+        <button class="sub-btn" onclick="appendValue('-')" aria-label="Subtract"><img src="./Calculator%20values/sub.png" alt="subtract" /></button>
+        <button onclick="appendValue('1')" aria-label="One"><img src="./Calculator%20values/1.png" alt="1" /></button>
+        <button onclick="appendValue('2')" aria-label="Two"><img src="./Calculator%20values/2.png" alt="2" /></button>
+        <button onclick="appendValue('3')" aria-label="Three"><img src="./Calculator%20values/3.png" alt="3" /></button>
+        <button class="plus-btn" onclick="appendValue('+')" aria-label="Add"><img src="./Calculator%20values/plus.png" alt="Plus" /></button>
+        <button onclick="appendValue('0')" aria-label="Zero"><img src="./Calculator%20values/0.png" alt="0" /></button>
+        <button onclick="appendValue('.')" aria-label="Decimal">
+          <img src="./Calculator%20values/decimal.png" alt="Decimal" />
         </button>
-        <button class="sub-btn" onclick="appendValue('-')">
-          <img src="sub.png" alt="subtract" />
-        </button>
-        <button onclick="appendValue('7')"><img src="7.png" alt="7" /></button>
-        <button onclick="appendValue('8')"><img src="8.png" alt="8" /></button>
-        <button onclick="appendValue('9')"><img src="9.png" alt="9" /></button>
-        <button onclick="appendValue('4')"><img src="4.png" alt="4" /></button>
-        <button onclick="appendValue('5')"><img src="5.png" alt="5" /></button>
-        <button onclick="appendValue('6')"><img src="6.png" alt="6" /></button>
-        <button onclick="appendValue('1')"><img src="1.png" alt="1" /></button>
-        <button onclick="appendValue('2')"><img src="2.png" alt="2" /></button>
-        <button onclick="appendValue('3')"><img src="3.png" alt="3" /></button>
-        <button onclick="appendValue('0')"><img src="0.png" alt="0" /></button>
-        <button onclick="appendValue('.')">
-          <img src="decimal.png" alt="Decimal" />
-        </button>
-        <button class="plus-btn" onclick="appendValue('+')">
-          <img src="plus.png" alt="Plus" />
-        </button>
-        <button class="clear-btn" onclick="clearDisplay()">
-          <img src="clear.png" alt="Clear" />
-        </button>
-        <button class="equals-btn" onclick="calculate()">
-          <img src="equal.png" alt="Equal" />
+        <button class="equals-btn" onclick="calculate()" aria-label="Equal">
+          <img src="./Calculator%20values/equal.png" alt="Equal" />
         </button>
       </div>
     </div>

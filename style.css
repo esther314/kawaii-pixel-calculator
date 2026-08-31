@@ -1,37 +1,18 @@
-body {
-  font-family: firecode;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.calculator {
-  background: #dc93eb;
-  padding: 20px;
-  border-radius: 35px;
-  width: 300px;
-  border: 4px solid #ccc;
-  box-shadow: 8px 8px 0px;
-}
-#display {
-  width: 100%;
-  height: 60px;
-  margin-bottom: 15px;
-  margin-left: -10px;
-  text-align: right;
-  padding: 10px;
-  font-size: 40px;
-  color: #0a0a0a;
+mily:
+    "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #8b059c;
   border: none;
   border-radius: 8px;
-  box-shadow: 2px 2px 0px;
+  box-shadow: 4px 4px 20px;
 }
+
 .buttons {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  align-items: center;
 }
+
 .buttons button {
   background: transparent;
   border: none;
@@ -40,6 +21,18 @@ body {
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
+   /* Smooth button animation */
+  transition: transform 0.1s ease;
+}
+
+/* Button lifts when the mouse is over it */
+.buttons button:hover {
+  transform: translateY(-3px);
+}
+
+/* Button presses down when clicked */
+.buttons button:active {
+  transform: translateY(3px);
 }
 
 button img {
@@ -49,18 +42,168 @@ button img {
   pointer-events: none;
 }
 .equals-btn {
-  margin-left: 50px;
-  margin-bottom: 20px;
-  width: 190%;
-  height: 190%;
+  margin-left: 9px;
+  margin-bottom: 10px;
+  width: 160%;
 }
-.clear-btn {
-  margin-top: -3px;
-  margin-left: -2px;
-  width: 203%;
-  height: 190%;
+.operator {
+  grid-column: 4;
+  height: 100%;
 }
-.sub-btn {
-  margin-top: 2px;
+.clear-btn { 
+  width: 120%;
+  height: 120%;
+  margin-right: 10px;  
+}
+.delete-btn {
+  background: #c98bea !important;
+  border: 4px solid #7130a8 !important;
+  box-shadow: inset 0 -5px 0 #a45bd0;
   width: 100%;
+  height: 55% !important;
+  margin-top: 40%;
+  margin-left: 9%;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 18px !important;
+  color: rgb(158, 30, 30) !important;
+  border-radius: 15px !important;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+}
+
+.delete-btn:active {
+  transform: translateY(3px);
+}
+/* 📱 Responsive design */
+@media (max-width: 500px) {
+  body {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .calculator {
+    width: min(300px, 90vw);
+    padding: 15px;
+  }
+
+  #display {
+    width: 100%;
+    margin-left: 0;
+    font-size: 22px;
+  }
+
+  .buttons {
+    gap: 7px;
+  }
+
+  .buttons button {
+    height: 50px;
+  }
+
+  button img {
+    width: 105%;
+    height: 140%;
+  }
+}
+/* 📜 Calculation History */
+.history {
+  width: 100%;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.history-title {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 10px;
+  color: #8b059c;
+  margin-bottom: 5px;
+}
+
+#history-list {
+  max-height: 70px;
+  overflow-y: auto;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 9px;
+  color: #8b059c;
+}
+
+.history-item {
+  margin-bottom: 4px;
+}
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.clear-history-btn {
+  background: #f58bc9 !important;
+  border: 3px solid #8b059c !important;
+  box-shadow: inset 0 -3px 0 #d562a5; 
+  color: white !important;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 7px !important;
+  font-weight: bold;
+  padding: 6px 8px;
+  height: 40% !important;
+  width: 100% !important;
+  margin-top: 30px;
+  margin-left: 14%;  
+  border-radius: 8px !important;
+  cursor: pointer;
+  
+}
+
+.clear-history-btn:hover {
+  transform: translateY(-2px);
+}
+
+.clear-history-btn:active {
+  transform: translateY(2px);
+}
+/* 🌙 Theme button */
+.theme-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 8px;
+
+  width: 40px !important;
+  height: 40px !important;
+
+  background: transparent !important;
+  border: none !important;
+
+  font-size: 20px !important;
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.theme-btn:hover {
+  transform: rotate(15deg) scale(1.1);
+}
+/* 🌙 Dark mode */
+body.dark-mode {
+  background-color: #1b1524;
+}
+
+body.dark-mode .calculator {
+  background: #3b2450;
+  border-color: #6d4a82;
+  color: #f3d9ff;
+}
+
+body.dark-mode #display {
+  background: #24192e;
+  color: #f3d9ff;
+}
+
+body.dark-mode .history-title,
+body.dark-mode #history-list {
+  color: #f3d9ff;
 }
