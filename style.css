@@ -1,4 +1,31 @@
-mily:
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  background: #d336e5;
+  padding: 20px;
+  border-radius: 35px;
+  width: 300px;
+  border: 4px solid #ccc;
+  color: #8b059c;
+  box-shadow: 8px 8px 0px;
+}
+
+#display {
+  width: 100%;
+  height: 60px; 
+  margin-bottom: 15px;
+  margin-left: -10px;
+  text-align: right;
+  padding: 10px;
+  font-size: 30px;
+  font-family:
     "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #8b059c;
   border: none;
